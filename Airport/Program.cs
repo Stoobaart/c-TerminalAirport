@@ -100,8 +100,7 @@ namespace AirportApp
 					var airline = Console.ReadLine();
 					Flight newFlight = new Flight(airport.airportName, destination, airline);
 					terminal.AddFlight(newFlight);
-					Console.WriteLine("New flight created: " + terminal.flights[0].ToString());
-
+					Console.WriteLine("New flight created: " + terminal.flights[terminal.flights.Count].ToString());
 				}
 				/* Print Passengers */
 				else {
@@ -109,13 +108,42 @@ namespace AirportApp
 					Console.WriteLine("\nPlease see the passengers on " + flight);
 
 					Console.WriteLine("0) Create a new passenger");
-					Console.WriteLine("00) Remove a passenger");
+					Console.WriteLine("1) Remove a passenger");
 
 					for (int i = 0; i < flight.passengers.Count; i++)
 					{
-						Console.WriteLine((i + 1) + ") " + flight.passengers[i].ToString());
+						Console.WriteLine((i + 2) + ") " + flight.passengers[i].ToString());
 					}
-					flightFinished = true;
+
+					chosenNumber = Console.ReadLine();
+
+					if (Int32.Parse(chosenNumber) == 0)
+					{
+						Console.WriteLine("Please Create a Passenger");
+						Console.WriteLine("First Name?");
+						var firstName = Console.ReadLine();
+						Console.WriteLine("Last Name?");
+						var lastName = Console.ReadLine();
+						Console.WriteLine("Date Of Birth?");
+						var dob = Console.ReadLine();
+						Passenger newPassenger = new Passenger(firstName, lastName, dob);
+						flight.AddPassenger(newPassenger);
+						Console.WriteLine("New passenger created: " + flight.passengers[flight.passengers.Count].ToString());
+					}
+					else if (Int32.Parse(chosenNumber) == 1)
+					{
+						Console.WriteLine("Who would you like to remove?");
+						for (int i = 0; i < flight.passengers.Count; i++)
+						{
+							Console.WriteLine((i + 1) + ") " + flight.passengers[i].ToString());
+						}
+						chosenNumber = Console.ReadLine();
+						flight.RemovePassenger(flight.passengers[Int32.Parse(chosenNumber) - 1]);
+					}
+					else
+					{
+						flightFinished = true;
+					}
 				}
 			}
 		}
