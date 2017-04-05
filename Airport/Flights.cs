@@ -17,7 +17,7 @@ namespace AirportApp
 
 		public override string ToString()
 		{
-			return String.Format("{0} {1} {2}", location, destination, airline);
+			return String.Format("From: {0}, To: {1}, Airline: {2}", location, destination, airline);
 		}
 	}
 }

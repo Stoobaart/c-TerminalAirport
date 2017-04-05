@@ -27,6 +27,25 @@ namespace AirportApp
 			airports[1].terminals[0] = romeTerminal1;
 			airports[1].terminals[1] = romeTerminal2;
 
+			Flight londonNewyork = new Flight("London City Airport", "New York", "Yankee Dreams");
+			Flight londonChina = new Flight("London City Airport", "China", "Dim Sum Air");
+			airports[0].terminals[0].AddFlight(londonNewyork);
+			airports[0].terminals[0].AddFlight(londonChina);
+
+			Flight londonJapan = new Flight("London City Airport", "Japan", "Robo Air");
+			Flight londonNewzealand = new Flight("London City Airport", "New Zealand", "Lord of the Flights");
+			airports[0].terminals[1].AddFlight(londonJapan);
+			airports[0].terminals[1].AddFlight(londonNewzealand);
+
+			Flight romeNewyork = new Flight("Rome International", "New York", "Yankee Dreams");
+			Flight romeChina = new Flight("Rome International", "China", "Dim Sum Air");
+			airports[1].terminals[0].AddFlight(romeNewyork);
+			airports[1].terminals[0].AddFlight(romeChina);
+
+			Flight romeJapan = new Flight("Rome International", "Japan", "Robo Air");
+			Flight romeNewzealand = new Flight("Rome International", "New Zealand", "Lord of the Flights");
+			airports[1].terminals[1].AddFlight(romeJapan);
+			airports[1].terminals[1].AddFlight(romeNewzealand);
 
 			/* Print Airports */
 			for (int i = 0; i < airports.Length; i++)
@@ -34,10 +53,10 @@ namespace AirportApp
 				Console.WriteLine((i + 1) + ") " + airports[i].ToString());
 			}
 
-			Console.WriteLine("Please type the number of the Airport that you would like to check");
+			Console.WriteLine("\nPlease type the number of the Airport that you would like to check");
 			var chosenNumber = Console.ReadLine();
 			var airport = airports[Int32.Parse(chosenNumber) - 1];
-			Console.WriteLine("Please see the information for " + airport);
+			Console.WriteLine("\nPlease see the information for " + airport);
 
 			/* Print Terminals */
 			for (int i = 0; i < airport.terminals.Length; i++)
@@ -45,36 +64,47 @@ namespace AirportApp
 				Console.WriteLine((i + 1) + ") " + airport.terminals[i].ToString());
 			}
 
-			Console.WriteLine("Please choose which number terminal you would like to view info for");
+			Console.WriteLine("\nPlease choose which number terminal you would like to view info for");
 			chosenNumber = Console.ReadLine();
 			var terminal = airport.terminals[Int32.Parse(chosenNumber) - 1];
-			Console.WriteLine("Please see the options for " + terminal);
+			Console.WriteLine("\nPlease see the options for " + terminal);
 
-			/* Print Flights */
-			for (int i = 0; i < terminal.flights.Count; i++)
-			{
-				Console.WriteLine((i + 1) + ") " + terminal.flights[i].ToString());
-			}
 
-			Console.WriteLine("Please choose which number flight you would like to view info for");
-			Console.WriteLine("0) Create a new flight");
-			chosenNumber = Console.ReadLine();
-			if (Int32.Parse(chosenNumber) == 0)
+			bool flightFinished = false;
+			while (!flightFinished)
 			{
-				Console.WriteLine("Please Create a Flight");
-				Console.WriteLine("Destination?");
-				var destination = Console.ReadLine();
-				Console.WriteLine("Airline");
-				var airline = Console.ReadLine();
-				Flight newFlight = new Flight(airport.airportName, destination, airline);
-				terminal.AddFlight(newFlight);
-				Console.WriteLine(terminal.flights[0].ToString());
-			}
-			else {
-				var flight = terminal.flights[Int32.Parse(chosenNumber) - 1];
-				Console.WriteLine("Please see the options for " + flight);
+				Console.WriteLine("\nPlease choose which number flight you would like to view info for");
+				Console.WriteLine("0) Create a new flight");
+
+				for (int i = 0; i < terminal.flights.Count; i++)
+				{
+					Console.WriteLine((i + 1) + ") " + terminal.flights[i].ToString());
+				}
+
+				chosenNumber = Console.ReadLine();
+
+				/* Create an new flight */
+				if (Int32.Parse(chosenNumber) == 0)
+				{
+					Console.WriteLine("Please Create a Flight");
+					Console.WriteLine("Destination?");
+					var destination = Console.ReadLine();
+					Console.WriteLine("Airline");
+					var airline = Console.ReadLine();
+					Flight newFlight = new Flight(airport.airportName, destination, airline);
+					terminal.AddFlight(newFlight);
+					Console.WriteLine("New flight created: " + terminal.flights[0].ToString());
+
+				}
+				/* Print Passengers */
+				else {
+					var flight = terminal.flights[Int32.Parse(chosenNumber) - 1];
+					Console.WriteLine("\nPlease see the options for " + flight);
+
+
+					flightFinished = true;
+				}
 			}
 		}
-
 	}
 }
