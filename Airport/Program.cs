@@ -54,6 +54,41 @@ namespace AirportApp
 			airports[0].terminals[0].flights[0].AddPassenger(londonNewyorkPassengerOne);
 			airports[0].terminals[0].flights[0].AddPassenger(londonNewyorkPassengerTwo);
 
+			Passenger londonChinaPassengerOne = new Passenger("Robert", "DiNero", "02/06/1953");
+			Passenger londonChinaPassengerTwo = new Passenger("Donald", "Trump", "17/09/1956");
+			airports[0].terminals[0].flights[1].AddPassenger(londonChinaPassengerOne);
+			airports[0].terminals[0].flights[1].AddPassenger(londonChinaPassengerTwo);
+
+			Passenger londonJapanPassengerOne = new Passenger("Stuart", "Smith", "01/04/1983");
+			Passenger londonJapanPassengerTwo = new Passenger("Christopher", "Tsoi", "03/04/1992");
+			airports[0].terminals[1].flights[0].AddPassenger(londonJapanPassengerOne);
+			airports[0].terminals[1].flights[0].AddPassenger(londonJapanPassengerTwo);
+
+			Passenger londonNewzealandPassengerOne = new Passenger("Tom", "Middleton", "11/06/1991");
+			Passenger londonNewzealandPassengerTwo = new Passenger("Gurpal", "Bahra", "30/11/1993");
+			airports[0].terminals[1].flights[1].AddPassenger(londonNewzealandPassengerOne);
+			airports[0].terminals[1].flights[1].AddPassenger(londonNewzealandPassengerTwo);
+
+			Passenger romeNewyorkPassengerOne = new Passenger("Bob", "Dilbert", "20/03/1980");
+			Passenger romeNewyorkPassengerTwo = new Passenger("Michelle", "Pfiefer", "03/04/1974");
+			airports[1].terminals[0].flights[0].AddPassenger(romeNewyorkPassengerOne);
+			airports[1].terminals[0].flights[0].AddPassenger(romeNewyorkPassengerTwo);
+
+			Passenger romeChinaPassengerOne = new Passenger("Lucy", "Lui", "01/04/1978");
+			Passenger romeChinaPassengerTwo = new Passenger("Ollie", "Holden", "03/07/2001");
+			airports[1].terminals[0].flights[1].AddPassenger(romeChinaPassengerOne);
+			airports[1].terminals[0].flights[1].AddPassenger(romeChinaPassengerTwo);
+
+			Passenger romeJapanPassengerOne = new Passenger("Roberto", "Bagio", "02/06/1967");
+			Passenger romeJapanPassengerTwo = new Passenger("Matheo", "Dimateo", "17/09/1971");
+			airports[1].terminals[1].flights[0].AddPassenger(romeJapanPassengerOne);
+			airports[1].terminals[1].flights[0].AddPassenger(romeJapanPassengerTwo);
+
+			Passenger romeNewzealandPassengerOne = new Passenger("Michael", "Jackson", "17/08/1957");
+			Passenger romeNewzealandPassengerTwo = new Passenger("Eddie", "Izzard", "25/12/1972");
+			airports[1].terminals[1].flights[1].AddPassenger(romeNewzealandPassengerOne);
+			airports[1].terminals[1].flights[1].AddPassenger(romeNewzealandPassengerTwo);
+
 			/* Print Airports */
 			for (int i = 0; i < airports.Length; i++)
 			{
