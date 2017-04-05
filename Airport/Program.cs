@@ -100,7 +100,7 @@ namespace AirportApp
 					var airline = Console.ReadLine();
 					Flight newFlight = new Flight(airport.airportName, destination, airline);
 					terminal.AddFlight(newFlight);
-					Console.WriteLine("New flight created: " + terminal.flights[terminal.flights.Count].ToString());
+					Console.WriteLine("New flight created: " + newFlight.ToString());
 				}
 				/* Print Passengers */
 				else {
@@ -128,7 +128,7 @@ namespace AirportApp
 						var dob = Console.ReadLine();
 						Passenger newPassenger = new Passenger(firstName, lastName, dob);
 						flight.AddPassenger(newPassenger);
-						Console.WriteLine("New passenger created: " + flight.passengers[flight.passengers.Count].ToString());
+						Console.WriteLine("New passenger created: " + newPassenger.ToString());
 					}
 					else if (Int32.Parse(chosenNumber) == 1)
 					{
