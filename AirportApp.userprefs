@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{B94CD983-14B0-4275-AB42-AF729417517C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Airport/Program.cs">
+    <Files>
+      <File FileName="Airport/Program.cs" Line="7" Column="41" />
+      <File FileName="Airport/Airports.cs" Line="8" Column="3" />
+      <File FileName="Airport/Terminals.cs" Line="8" Column="12" />
+      <File FileName="Airport/Flights.cs" Line="6" Column="27" />
+      <File FileName="Airport/Passengers.cs" Line="8" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.ItemProperties.AirportApp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

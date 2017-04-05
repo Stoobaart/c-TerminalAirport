@@ -1,5 +1,6 @@
 ﻿using System;
-namespace Airport
+
+namespace AirportApp
 {
 	public class Airport
 	{

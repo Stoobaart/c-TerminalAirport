@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Airport
+namespace AirportApp
 {
 	class MainClass
 	{
@@ -13,7 +13,6 @@ namespace Airport
 			Airport[] airports = new Airport[2];
 			airports[0] = richmondAirport;
 			airports[1] = whateverAirport;
-
 			for (int i = 0; i < airports.Length; i++)
 			{
 				Console.WriteLine(airports[i].ToString());
