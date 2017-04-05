@@ -2,13 +2,13 @@
 
 namespace AirportApp
 {
-	public class Passengers
+	public class Passenger
 	{
 		private string firstName;
 		private string lastName;
 		private string dateOfBirth;
 
-		public Passengers(string inputFirstName, string inputLastName, string inputDateOfBirth)
+		public Passenger(string inputFirstName, string inputLastName, string inputDateOfBirth)
 		{
 			firstName = inputFirstName;
 			lastName = inputLastName;

@@ -27,6 +27,7 @@ namespace AirportApp
 			airports[1].terminals[0] = romeTerminal1;
 			airports[1].terminals[1] = romeTerminal2;
 
+			/* Initialise Flights */
 			Flight londonNewyork = new Flight("London City Airport", "New York", "Yankee Dreams");
 			Flight londonChina = new Flight("London City Airport", "China", "Dim Sum Air");
 			airports[0].terminals[0].AddFlight(londonNewyork);
@@ -46,6 +47,12 @@ namespace AirportApp
 			Flight romeNewzealand = new Flight("Rome International", "New Zealand", "Lord of the Flights");
 			airports[1].terminals[1].AddFlight(romeJapan);
 			airports[1].terminals[1].AddFlight(romeNewzealand);
+
+			/* Initialise Passengers */
+			Passenger londonNewyorkPassengerOne = new Passenger("Bob", "Dilbert", "20/03/1980");
+			Passenger londonNewyorkPassengerTwo = new Passenger("Michelle", "Pfiefer", "03/04/1974");
+			airports[0].terminals[0].flights[0].AddPassenger(londonNewyorkPassengerOne);
+			airports[0].terminals[0].flights[0].AddPassenger(londonNewyorkPassengerTwo);
 
 			/* Print Airports */
 			for (int i = 0; i < airports.Length; i++)
@@ -99,9 +106,15 @@ namespace AirportApp
 				/* Print Passengers */
 				else {
 					var flight = terminal.flights[Int32.Parse(chosenNumber) - 1];
-					Console.WriteLine("\nPlease see the options for " + flight);
+					Console.WriteLine("\nPlease see the passengers on " + flight);
 
+					Console.WriteLine("0) Create a new passenger");
+					Console.WriteLine("00) Remove a passenger");
 
+					for (int i = 0; i < flight.passengers.Count; i++)
+					{
+						Console.WriteLine((i + 1) + ") " + flight.passengers[i].ToString());
+					}
 					flightFinished = true;
 				}
 			}
